@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="canonical" href="https://courses.engr.illinois.edu/ece420/lab1/"> 
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    <title>Lab 1 - IMU Pedometer - ECE 420 - Fall 2017</title>
+
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">ECE 420 - Fall 2017</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Labs <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li class="active">
+    <a href="./">Lab 1 - IMU Pedometer</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../lab2/">Lab 2 - Spectrogram</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../lab3/">Lab 3 - Autotune</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../lab4/">Lab 4 - Image Processing</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../lab5/">Lab 5 - Heart Rate Detection</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Final Project <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../final_project/description/">Description</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../final_project/resources/">Resources</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../final_project/project_ideas/">Project Ideas</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="..">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../lab2/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#lab-1-imu-pedometer">Lab 1 - IMU Pedometer</a></li>
+        
+            <li class="second-level"><a href="#set-up-python-interpreter">Set up Python Interpreter.</a></li>
+            
+        
+            <li class="second-level"><a href="#create-a-new-project">Create a new Project</a></li>
+            
+        
+            <li class="second-level"><a href="#plot-the-sensor-data">Plot the sensor data</a></li>
+            
+        
+            <li class="second-level"><a href="#run-the-python-code">Run the python code</a></li>
+            
+        
+            <li class="second-level"><a href="#debug-your-code">Debug your code</a></li>
+            
+        
+            <li class="second-level"><a href="#debug-in-the-ipython-console">Debug in the IPython Console</a></li>
+            
+        
+            <li class="second-level"><a href="#define-your-function">Define your function</a></li>
+            
+        
+            <li class="second-level"><a href="#assignment">Assignment</a></li>
+            
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="lab-1-imu-pedometer">Lab 1 - IMU Pedometer</h1>
+<p>For this course, <a href="https://www.jetbrains.com/pycharm/">PyCharm</a> will be our Python IDE.</p>
+<h2 id="set-up-python-interpreter">Set up Python Interpreter.</h2>
+<ul>
+<li>
+<p>Open PyCharm.</p>
+</li>
+<li>
+<p>Go to PyCharm Preferences</p>
+</li>
+<li>
+<p>Go to Project:python -&gt; Project Interpreter. Nagvigate to /anaconda/bin/python on Mac or "C:\Users\Jane Smith\anaconda\bin\python" on Windows.</p>
+</li>
+<li>
+<p>Click OK</p>
+</li>
+</ul>
+<h2 id="create-a-new-project">Create a new Project</h2>
+<ul>
+<li>
+<p>Go to File -&gt; New Project</p>
+</li>
+<li>
+<p>Choose a Pure Python project. Make sure the Interpreter is set correctly.</p>
+</li>
+<li>
+<p>Name the project lab 1. Click OK.</p>
+</li>
+<li>
+<p>Right click the lab1 Navigation bar.</p>
+</li>
+<li>
+<p>Choose New -&gt; Python File. Name it peak_detection.</p>
+</li>
+</ul>
+<h2 id="plot-the-sensor-data">Plot the sensor data</h2>
+<p>Copy the "sample_sensor_data.csv" to the lab1 folder.</p>
+<p>In the file peak_detection.py, type the following:</p>
+<p><img alt="**Plotting code**" src="../lab1/code1.png" /></p>
+<p>We imported needed library (<a href="http://www.numpy.org">numpy</a>, <a href="http://matplotlib.org">matplotlib</a> and os) from line 1 to 3.
+Change the running directory in line 5 to where you store the sample_sensor_data.csv file.</p>
+<p>The accelerometer and gyroscope data are read in line 11 and 12. Let's plot the first axis of accelerometer data in line 14.  </p>
+<h2 id="run-the-python-code">Run the python code</h2>
+<p>Right click anywhere inside the code page and choose Run 'peak_detection'.</p>
+<p>Close the figure to stop the program from running.</p>
+<p><img alt="Sensor data" src="../lab1/code1_output.png" /></p>
+<h2 id="debug-your-code">Debug your code</h2>
+<p>Click on the space between the code the the line number on line 14. A break point (red cirle) should show up.</p>
+<p><img alt="Debug" src="../lab1/debug.png" /></p>
+<p>Right click inside the peak_detection.py or click on the Debug button on the top right corner of PyCharm. (It has the Bug symbol)</p>
+<p>In the Debug console, you can view all the variables currently created. If it is a numpy array, you can choose View as Array (at the end of the variable.)
+ <img alt="Debug View" src="../lab1/debug_view.png" /></p>
+<h2 id="debug-in-the-ipython-console">Debug in the IPython Console</h2>
+<p>Switch to the Console tab and choose Show Python Prompt.</p>
+<p><img alt="Python Prompt" src="../lab1/python_prompt.png" /></p>
+<p>This is the python interactive console which is connected to your debugger.</p>
+<p>Let's find the maximum of the accelerometer data.
+Type <code>accel_data[0].max()</code>  in the console and press enter.
+It should give you 12.507.</p>
+<h2 id="define-your-function">Define your function</h2>
+<p>Now let's define a function to find the peak in your signal.
+Go to the top of the function and define the function peak_detection on line 4.</p>
+<p><img alt="Function" src="../lab1/def_fnc.png" /></p>
+<p>We define a <a href="https://developers.google.com/edu/python/lists">list</a> of peaks on line 5. For now we detect only one peak, the maximum value of our signal. We use a for loop to traverse through the our array <strong>sig</strong>. Initially, the max_val is set to minus infinity. Every time we encounter a greater value than max_val, we record this value and its position.
+Python relies on tab spacing to realize different part of the code.</p>
+<p>In line 14, we turn our list to numpy array for plotting.</p>
+<p>Now that we define our function, we can call it and plot our peak.
+Add this line of code after the plot function.</p>
+<pre><code>plt.scatter(max_peaks[:,0], max_peaks[:,1], color = 'red')
+</code></pre>
+
+<p>Now run or debug your program.
+You should see your red peak overlaid onto the signal.</p>
+<p><img alt="Peak Plot" src="../lab1/peak_plot.png" /></p>
+<h2 id="assignment">Assignment</h2>
+<p>Modify the peak_detection function to detect other peaks. It should accept another input parameter <em>thresh</em>. A peak should have value greater than thresh.</p>
+<p>Rename your python file to firstname_lastName.py when you submit it.</p>
+<p>Here is a sample output:</p>
+<p><img alt="Sample_solution" src="../lab1/sample_solution.png" /></p></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+    </footer>
+
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '..';
+    </script>
+    <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+    <script src="../js/base.js"></script>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>

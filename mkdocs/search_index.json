@@ -1,0 +1,184 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Welcome to ECE 420\n\n\n\n\nCourse Description:\n The first six weeks of the course will be structured labs based on the course text. The next 3 weeks will be on implementation and simulation of a fundamental DSP algorithm (such as adaptive filter, pitch detection, edge-aware filtering, motion tracking, pattern recognition,...) that the student chooses from a set of seminal DSP papers. The remaining 6 weeks of the course will be the development, testing, and documenting of a DSP project of the student\u2019s choice (subject to instructor approval).\n\n-----Above Copied Directly From Old Page-----\n\n\nCourse Goals:\n Students will learn to implement and analyze real-time digital signal processing (DSP) systems. Students will both broaden and deepen their understanding of basic DSP theory and techniques and learn to relate this understanding to real-world observations and applications. They will learn industrially relevant skills such as assembly-language implementation of real-time DSP systems on a DSP microprocessor, and Android development of DSP applications on mobile devices. Other significant educational experiences include open-ended design, oral and written communication, and team projects. \n\n-----Above Copied Directly From Old Page-----\n\n\nLectures\n\n\nLectures are once a week on Monday from 2:00-2:50pm in 4070 ECE Building.\n\n\nCourse Schedule\n\n\n\n\n\n\n\n\nWeek of\n\n\nLecture Topic\n\n\nLab\n\n\nDue (in lab)\n\n\n\n\n\n\n\n\n\n\n01/16\n\n\nTBD\n\n\nTBD\n\n\nTBD\n\n\n\n\n\n\n01/23\n\n\nTBD\n\n\nTBD\n\n\nTBD\n\n\n\n\n\n\n01/30\n\n\nTBD\n\n\nTBD\n\n\nTBD\n\n\n\n\n\n\n02/06\n\n\nTBD\n\n\nTBD\n\n\nTBD\n\n\n\n\n\n\n02/13\n\n\nTBD\n\n\nTBD\n\n\nTBD\n\n\n\n\n\n\n02/20\n\n\nTBD\n\n\nTBD\n\n\nTBD\n\n\n\n\n\n\n02/27\n\n\nTBD\n\n\nTBD\n\n\nTBD\n\n\n\n\n\n\n03/06\n\n\nTBD\n\n\nTBD\n\n\nTBD\n\n\n\n\n\n\n03/13\n\n\nTBD\n\n\nTBD\n\n\nTBD\n\n\n\n\n\n\n03/20\n\n\nSpring Break\n\n\n\n\n\n\n\n\n\n\n03/27\n\n\nTBD\n\n\nTBD\n\n\nTBD\n\n\n\n\n\n\n04/03\n\n\nTBD\n\n\nTBD\n\n\nTBD\n\n\n\n\n\n\n04/10\n\n\nTBD\n\n\nTBD\n\n\nTBD\n\n\n\n\n\n\n04/17\n\n\nTBD\n\n\nTBD\n\n\nTBD\n\n\n\n\n\n\n04/24\n\n\nTBD\n\n\nTBD\n\n\nTBD\n\n\n\n\n\n\n05/01\n\n\nTBD\n\n\nTBD\n\n\nTBD\n\n\n\n\n\n\n\n\nLabs\n\n\nLabs are held in Room 5072 ECE Building.\n\n Section ABA meets Tuesday, 2:00-3:50 PM.\n\n Section ABC meets Wednesday, 2:00-3:50 PM.\n\n Section ABD meets Thursday, 2:00-3:50 PM.\n\n Section ABE meets Friday, 2:00-3:50 PM.\n\n\n-----Following Part Copied Directly From Old Page-----\n\nWorking code is due the same day as the quiz.\n\n\nThe lab is available at all times except University holiday weekends and ECE 420 class times.\n\n\nStudents are expected to be in the lab for their two-hour assigned lab period. In addition, students can access the lab at any time (subject to departmental rules for normal lab privileges) using their I-card. It is expected that students will require additional lab time to complete their assignments. ECE 420 students having difficulty with their I-card access should notify one of the teaching assistants.\n\n\nBasic rules of courtesy and professional behavior are expected in the lab. Please do not remove any lab equipment, books, or manuals from the lab at any time. If you would like to listen to music as you work, please use headphones.\n\n\nManuals / Handouts\n\n\n\n\nInsert Links Here!\n\n\n\n\nGrades\n\n\n-----Following Part Copied Directly From Old Page-----\n\nGrades can be found on Compass at: \nCompass2g\n\n\nThe structured laboratory segment will count for 35% of the total grade, based on completion of, and oral examination over, the weekly laboratory assignments, including the underlying theory, details of the implementation and code, and the observed behavior of the system. Each lab is worth 7 points, usually with 4 point for prelab and written quiz, and the remaining 3 points for demo and oral quiz. We emphasize that your grade is based heavily on your understanding and demonstration of the course material, not just on submitting working code.\n\n\nThe assigned project lab (based on the student's chosen DSP paper) will account for 15% of the total grade.\n\n\nThe final project will count for 45% of the total grade, with 10% on the project proposal and the design review, 15% for demonstrations and quizzes of 3 project milestones, 10% for the final demo and oral presentations, and 10% on the final report.\n\n\nThe final 5% of the total course grade comes from a written quiz over the lecture material.\n\n\nIt is expected that each student will attend and participate in scheduled class and laboratory meetings, or will make prior alternate arrangements with the instructor. The final grade may be penalized if this does not occur.\n\n\nAll assignments other than the lecture quiz, final project proposal, and final project report are due during the scheduled laboratory meeting. A late penalty of 50% will be assessed for assignments less than a week late; assignments more than a week late will receive no credit. However, all graded assignments must be submitted to receive a passing grade in the course.\n\n\nProject Details\n\n\nAssigned Project Lab\n\n\n-----Following Part Copied Directly From Old Page-----\n\nIn this lab, students will explore in depth a chosen fundamental DSP algorithm using high-level languages (such as MATLAB or Python). Student have to demonstrate their understanding of the algorithm and its implementation through oral quiz in the lab. Students have to develop a testing and validation plan to demonstrate that the high-level implementation works. Methodology and results should be included in a short report.\n\n\nMore information may be found at \nAssigned Project Lab Details\n.\n\n\nFinal Project\n\n\n-----Following Part Copied Directly From Old Page-----\n\nThe last half of the course will be devoted to team projects of the student\u00e2\u20ac\u2122s choice. The projects can be primarily software, primarily hardware, or a mixture, depending on the student's interests. Ideally the final project should build on the assigned project lab. A DSP platform other than the TMS320C5510 and Android mobile device can be used (or may be required) as appropriate for the needs of the project. Real-time, audio-rate digital signal processing of significant complexity is feasible, as is a basic digital communication system, computational imaging, and video processing. The emphasis in grading will be on successful completion of the agreed-upon project. Project ideas from the students will be welcomed.\n\n\nMore information may be found at \nFinal Project Details\n.\n\n\nAcademic Integrity Policy\n\n\n-----Following Part Copied Directly From Old Page-----\n\nPrinted and online sources are allowed with proper citation. Please direct your question to Google or the course staff before you ask your classmates. Given the range of the material for this course, we encourage you to refer to any online source, but do not directly copy and paste.\n\n\nWe do not allow inter-group cooperation for the final project. If there is a sign of cooperation between groups, those groups will be treated as a big group, and the grade will be divided accordingly.\n\n\nMore information: \nStudent Code\n.\n\n\nOffice Hours / Course Administrivia\n\n\n\n\nProf. Minh Do: TBD\n\n\nTA Dario Aranguiz: TBD\n\n\nTA Trong Nguyen: TBD\n\n\nTA Dongbo Wang: TBD\n\n\n\n\nIf you have questions, post it on \nPiazza\n.\n\n\nInstructor Contact Information\n\n\n\n\nProf.Minh Do: minhdo@illinois.edu \n\n\nTA Dario Aranguiz: aranguizdario@gmail.com\n\n\nTA Trong Nguyen: ngoctrong29@gmail.com\n\n\nTA Dongbo Wang: dwang49@illinois.edu",
+            "title": "Home"
+        },
+        {
+            "location": "/#welcome-to-ece-420",
+            "text": "Course Description:  The first six weeks of the course will be structured labs based on the course text. The next 3 weeks will be on implementation and simulation of a fundamental DSP algorithm (such as adaptive filter, pitch detection, edge-aware filtering, motion tracking, pattern recognition,...) that the student chooses from a set of seminal DSP papers. The remaining 6 weeks of the course will be the development, testing, and documenting of a DSP project of the student\u2019s choice (subject to instructor approval). -----Above Copied Directly From Old Page-----  Course Goals:  Students will learn to implement and analyze real-time digital signal processing (DSP) systems. Students will both broaden and deepen their understanding of basic DSP theory and techniques and learn to relate this understanding to real-world observations and applications. They will learn industrially relevant skills such as assembly-language implementation of real-time DSP systems on a DSP microprocessor, and Android development of DSP applications on mobile devices. Other significant educational experiences include open-ended design, oral and written communication, and team projects.  -----Above Copied Directly From Old Page-----",
+            "title": "Welcome to ECE 420"
+        },
+        {
+            "location": "/#lectures",
+            "text": "Lectures are once a week on Monday from 2:00-2:50pm in 4070 ECE Building.  Course Schedule     Week of  Lecture Topic  Lab  Due (in lab)      01/16  TBD  TBD  TBD    01/23  TBD  TBD  TBD    01/30  TBD  TBD  TBD    02/06  TBD  TBD  TBD    02/13  TBD  TBD  TBD    02/20  TBD  TBD  TBD    02/27  TBD  TBD  TBD    03/06  TBD  TBD  TBD    03/13  TBD  TBD  TBD    03/20  Spring Break      03/27  TBD  TBD  TBD    04/03  TBD  TBD  TBD    04/10  TBD  TBD  TBD    04/17  TBD  TBD  TBD    04/24  TBD  TBD  TBD    05/01  TBD  TBD  TBD",
+            "title": "Lectures"
+        },
+        {
+            "location": "/#labs",
+            "text": "Labs are held in Room 5072 ECE Building.  Section ABA meets Tuesday, 2:00-3:50 PM.  Section ABC meets Wednesday, 2:00-3:50 PM.  Section ABD meets Thursday, 2:00-3:50 PM.  Section ABE meets Friday, 2:00-3:50 PM.  -----Following Part Copied Directly From Old Page----- \nWorking code is due the same day as the quiz.  The lab is available at all times except University holiday weekends and ECE 420 class times.  Students are expected to be in the lab for their two-hour assigned lab period. In addition, students can access the lab at any time (subject to departmental rules for normal lab privileges) using their I-card. It is expected that students will require additional lab time to complete their assignments. ECE 420 students having difficulty with their I-card access should notify one of the teaching assistants.  Basic rules of courtesy and professional behavior are expected in the lab. Please do not remove any lab equipment, books, or manuals from the lab at any time. If you would like to listen to music as you work, please use headphones.",
+            "title": "Labs"
+        },
+        {
+            "location": "/#manuals-handouts",
+            "text": "Insert Links Here!",
+            "title": "Manuals / Handouts"
+        },
+        {
+            "location": "/#grades",
+            "text": "-----Following Part Copied Directly From Old Page----- \nGrades can be found on Compass at:  Compass2g  The structured laboratory segment will count for 35% of the total grade, based on completion of, and oral examination over, the weekly laboratory assignments, including the underlying theory, details of the implementation and code, and the observed behavior of the system. Each lab is worth 7 points, usually with 4 point for prelab and written quiz, and the remaining 3 points for demo and oral quiz. We emphasize that your grade is based heavily on your understanding and demonstration of the course material, not just on submitting working code.  The assigned project lab (based on the student's chosen DSP paper) will account for 15% of the total grade.  The final project will count for 45% of the total grade, with 10% on the project proposal and the design review, 15% for demonstrations and quizzes of 3 project milestones, 10% for the final demo and oral presentations, and 10% on the final report.  The final 5% of the total course grade comes from a written quiz over the lecture material.  It is expected that each student will attend and participate in scheduled class and laboratory meetings, or will make prior alternate arrangements with the instructor. The final grade may be penalized if this does not occur.  All assignments other than the lecture quiz, final project proposal, and final project report are due during the scheduled laboratory meeting. A late penalty of 50% will be assessed for assignments less than a week late; assignments more than a week late will receive no credit. However, all graded assignments must be submitted to receive a passing grade in the course.",
+            "title": "Grades"
+        },
+        {
+            "location": "/#project-details",
+            "text": "",
+            "title": "Project Details"
+        },
+        {
+            "location": "/#assigned-project-lab",
+            "text": "-----Following Part Copied Directly From Old Page----- \nIn this lab, students will explore in depth a chosen fundamental DSP algorithm using high-level languages (such as MATLAB or Python). Student have to demonstrate their understanding of the algorithm and its implementation through oral quiz in the lab. Students have to develop a testing and validation plan to demonstrate that the high-level implementation works. Methodology and results should be included in a short report.  More information may be found at  Assigned Project Lab Details .",
+            "title": "Assigned Project Lab"
+        },
+        {
+            "location": "/#final-project",
+            "text": "-----Following Part Copied Directly From Old Page----- \nThe last half of the course will be devoted to team projects of the student\u00e2\u20ac\u2122s choice. The projects can be primarily software, primarily hardware, or a mixture, depending on the student's interests. Ideally the final project should build on the assigned project lab. A DSP platform other than the TMS320C5510 and Android mobile device can be used (or may be required) as appropriate for the needs of the project. Real-time, audio-rate digital signal processing of significant complexity is feasible, as is a basic digital communication system, computational imaging, and video processing. The emphasis in grading will be on successful completion of the agreed-upon project. Project ideas from the students will be welcomed.  More information may be found at  Final Project Details .",
+            "title": "Final Project"
+        },
+        {
+            "location": "/#academic-integrity-policy",
+            "text": "-----Following Part Copied Directly From Old Page----- \nPrinted and online sources are allowed with proper citation. Please direct your question to Google or the course staff before you ask your classmates. Given the range of the material for this course, we encourage you to refer to any online source, but do not directly copy and paste.  We do not allow inter-group cooperation for the final project. If there is a sign of cooperation between groups, those groups will be treated as a big group, and the grade will be divided accordingly.  More information:  Student Code .",
+            "title": "Academic Integrity Policy"
+        },
+        {
+            "location": "/#office-hours-course-administrivia",
+            "text": "Prof. Minh Do: TBD  TA Dario Aranguiz: TBD  TA Trong Nguyen: TBD  TA Dongbo Wang: TBD   If you have questions, post it on  Piazza .",
+            "title": "Office Hours / Course Administrivia"
+        },
+        {
+            "location": "/#instructor-contact-information",
+            "text": "Prof.Minh Do: minhdo@illinois.edu   TA Dario Aranguiz: aranguizdario@gmail.com  TA Trong Nguyen: ngoctrong29@gmail.com  TA Dongbo Wang: dwang49@illinois.edu",
+            "title": "Instructor Contact Information"
+        },
+        {
+            "location": "/lab1/",
+            "text": "Lab 1 - IMU Pedometer\n\n\nFor this course, \nPyCharm\n will be our Python IDE.\n\n\nSet up Python Interpreter.\n\n\n\n\n\n\nOpen PyCharm.\n\n\n\n\n\n\nGo to PyCharm Preferences\n\n\n\n\n\n\nGo to Project:python -> Project Interpreter. Nagvigate to /anaconda/bin/python on Mac or \"C:\\Users\\Jane Smith\\anaconda\\bin\\python\" on Windows.\n\n\n\n\n\n\nClick OK\n\n\n\n\n\n\nCreate a new Project\n\n\n\n\n\n\nGo to File -> New Project\n\n\n\n\n\n\nChoose a Pure Python project. Make sure the Interpreter is set correctly.\n\n\n\n\n\n\nName the project lab 1. Click OK.\n\n\n\n\n\n\nRight click the lab1 Navigation bar.\n\n\n\n\n\n\nChoose New -> Python File. Name it peak_detection.\n\n\n\n\n\n\nPlot the sensor data\n\n\nCopy the \"sample_sensor_data.csv\" to the lab1 folder.\n\n\nIn the file peak_detection.py, type the following:\n\n\n\n\nWe imported needed library (\nnumpy\n, \nmatplotlib\n and os) from line 1 to 3.\nChange the running directory in line 5 to where you store the sample_sensor_data.csv file.\n\n\nThe accelerometer and gyroscope data are read in line 11 and 12. Let's plot the first axis of accelerometer data in line 14.  \n\n\nRun the python code\n\n\nRight click anywhere inside the code page and choose Run 'peak_detection'.\n\n\nClose the figure to stop the program from running.\n\n\n\n\nDebug your code\n\n\nClick on the space between the code the the line number on line 14. A break point (red cirle) should show up.\n\n\n\n\nRight click inside the peak_detection.py or click on the Debug button on the top right corner of PyCharm. (It has the Bug symbol)\n\n\nIn the Debug console, you can view all the variables currently created. If it is a numpy array, you can choose View as Array (at the end of the variable.)\n \n\n\nDebug in the IPython Console\n\n\nSwitch to the Console tab and choose Show Python Prompt.\n\n\n\n\nThis is the python interactive console which is connected to your debugger.\n\n\nLet's find the maximum of the accelerometer data.\nType \naccel_data[0].max()\n  in the console and press enter.\nIt should give you 12.507.\n\n\nDefine your function\n\n\nNow let's define a function to find the peak in your signal.\nGo to the top of the function and define the function peak_detection on line 4.\n\n\n\n\nWe define a \nlist\n of peaks on line 5. For now we detect only one peak, the maximum value of our signal. We use a for loop to traverse through the our array \nsig\n. Initially, the max_val is set to minus infinity. Every time we encounter a greater value than max_val, we record this value and its position.\nPython relies on tab spacing to realize different part of the code.\n\n\nIn line 14, we turn our list to numpy array for plotting.\n\n\nNow that we define our function, we can call it and plot our peak.\nAdd this line of code after the plot function.\n\n\nplt.scatter(max_peaks[:,0], max_peaks[:,1], color = 'red')\n\n\n\n\nNow run or debug your program.\nYou should see your red peak overlaid onto the signal.\n\n\n\n\nAssignment\n\n\nModify the peak_detection function to detect other peaks. It should accept another input parameter \nthresh\n. A peak should have value greater than thresh.\n\n\nRename your python file to firstname_lastName.py when you submit it.\n\n\nHere is a sample output:",
+            "title": "Lab 1 - IMU Pedometer"
+        },
+        {
+            "location": "/lab1/#lab-1-imu-pedometer",
+            "text": "For this course,  PyCharm  will be our Python IDE.",
+            "title": "Lab 1 - IMU Pedometer"
+        },
+        {
+            "location": "/lab1/#set-up-python-interpreter",
+            "text": "Open PyCharm.    Go to PyCharm Preferences    Go to Project:python -> Project Interpreter. Nagvigate to /anaconda/bin/python on Mac or \"C:\\Users\\Jane Smith\\anaconda\\bin\\python\" on Windows.    Click OK",
+            "title": "Set up Python Interpreter."
+        },
+        {
+            "location": "/lab1/#create-a-new-project",
+            "text": "Go to File -> New Project    Choose a Pure Python project. Make sure the Interpreter is set correctly.    Name the project lab 1. Click OK.    Right click the lab1 Navigation bar.    Choose New -> Python File. Name it peak_detection.",
+            "title": "Create a new Project"
+        },
+        {
+            "location": "/lab1/#plot-the-sensor-data",
+            "text": "Copy the \"sample_sensor_data.csv\" to the lab1 folder.  In the file peak_detection.py, type the following:   We imported needed library ( numpy ,  matplotlib  and os) from line 1 to 3.\nChange the running directory in line 5 to where you store the sample_sensor_data.csv file.  The accelerometer and gyroscope data are read in line 11 and 12. Let's plot the first axis of accelerometer data in line 14.",
+            "title": "Plot the sensor data"
+        },
+        {
+            "location": "/lab1/#run-the-python-code",
+            "text": "Right click anywhere inside the code page and choose Run 'peak_detection'.  Close the figure to stop the program from running.",
+            "title": "Run the python code"
+        },
+        {
+            "location": "/lab1/#debug-your-code",
+            "text": "Click on the space between the code the the line number on line 14. A break point (red cirle) should show up.   Right click inside the peak_detection.py or click on the Debug button on the top right corner of PyCharm. (It has the Bug symbol)  In the Debug console, you can view all the variables currently created. If it is a numpy array, you can choose View as Array (at the end of the variable.)",
+            "title": "Debug your code"
+        },
+        {
+            "location": "/lab1/#debug-in-the-ipython-console",
+            "text": "Switch to the Console tab and choose Show Python Prompt.   This is the python interactive console which is connected to your debugger.  Let's find the maximum of the accelerometer data.\nType  accel_data[0].max()   in the console and press enter.\nIt should give you 12.507.",
+            "title": "Debug in the IPython Console"
+        },
+        {
+            "location": "/lab1/#define-your-function",
+            "text": "Now let's define a function to find the peak in your signal.\nGo to the top of the function and define the function peak_detection on line 4.   We define a  list  of peaks on line 5. For now we detect only one peak, the maximum value of our signal. We use a for loop to traverse through the our array  sig . Initially, the max_val is set to minus infinity. Every time we encounter a greater value than max_val, we record this value and its position.\nPython relies on tab spacing to realize different part of the code.  In line 14, we turn our list to numpy array for plotting.  Now that we define our function, we can call it and plot our peak.\nAdd this line of code after the plot function.  plt.scatter(max_peaks[:,0], max_peaks[:,1], color = 'red')  Now run or debug your program.\nYou should see your red peak overlaid onto the signal.",
+            "title": "Define your function"
+        },
+        {
+            "location": "/lab1/#assignment",
+            "text": "Modify the peak_detection function to detect other peaks. It should accept another input parameter  thresh . A peak should have value greater than thresh.  Rename your python file to firstname_lastName.py when you submit it.  Here is a sample output:",
+            "title": "Assignment"
+        },
+        {
+            "location": "/lab2/",
+            "text": "Welcome to ECE 420\n\n\nContent to come soon!",
+            "title": "Lab 2 - Spectrogram"
+        },
+        {
+            "location": "/lab2/#welcome-to-ece-420",
+            "text": "Content to come soon!",
+            "title": "Welcome to ECE 420"
+        },
+        {
+            "location": "/lab3/",
+            "text": "Welcome to ECE 420\n\n\nContent to come soon!",
+            "title": "Lab 3 - Autotune"
+        },
+        {
+            "location": "/lab3/#welcome-to-ece-420",
+            "text": "Content to come soon!",
+            "title": "Welcome to ECE 420"
+        },
+        {
+            "location": "/lab4/",
+            "text": "Welcome to ECE 420\n\n\nContent to come soon!",
+            "title": "Lab 4 - Image Processing"
+        },
+        {
+            "location": "/lab4/#welcome-to-ece-420",
+            "text": "Content to come soon!",
+            "title": "Welcome to ECE 420"
+        },
+        {
+            "location": "/lab5/",
+            "text": "Welcome to ECE 420\n\n\nContent to come soon!",
+            "title": "Lab 5 - Heart Rate Detection"
+        },
+        {
+            "location": "/lab5/#welcome-to-ece-420",
+            "text": "Content to come soon!",
+            "title": "Welcome to ECE 420"
+        },
+        {
+            "location": "/final_project/description/",
+            "text": "Welcome to ECE 420\n\n\nContent to come soon!",
+            "title": "Description"
+        },
+        {
+            "location": "/final_project/description/#welcome-to-ece-420",
+            "text": "Content to come soon!",
+            "title": "Welcome to ECE 420"
+        },
+        {
+            "location": "/final_project/resources/",
+            "text": "Welcome to ECE 420\n\n\nContent to come soon!",
+            "title": "Resources"
+        },
+        {
+            "location": "/final_project/resources/#welcome-to-ece-420",
+            "text": "Content to come soon!",
+            "title": "Welcome to ECE 420"
+        },
+        {
+            "location": "/final_project/project_ideas/",
+            "text": "Welcome to ECE 420\n\n\nContent to come soon!",
+            "title": "Project Ideas"
+        },
+        {
+            "location": "/final_project/project_ideas/#welcome-to-ece-420",
+            "text": "Content to come soon!",
+            "title": "Welcome to ECE 420"
+        }
+    ]
+}
