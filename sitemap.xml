@@ -4,7 +4,7 @@
     
     <url>
      <loc>https://courses.engr.illinois.edu/ece420//</loc>
-     <lastmod>2017-01-10</lastmod>
+     <lastmod>2017-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,31 +13,7 @@
         
     <url>
      <loc>https://courses.engr.illinois.edu/ece420//lab1/</loc>
-     <lastmod>2017-01-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://courses.engr.illinois.edu/ece420//lab2/</loc>
-     <lastmod>2017-01-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://courses.engr.illinois.edu/ece420//lab3/</loc>
-     <lastmod>2017-01-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://courses.engr.illinois.edu/ece420//lab4/</loc>
-     <lastmod>2017-01-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://courses.engr.illinois.edu/ece420//lab5/</loc>
-     <lastmod>2017-01-10</lastmod>
+     <lastmod>2017-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -46,20 +22,14 @@
     
         
     <url>
-     <loc>https://courses.engr.illinois.edu/ece420//final_project/description/</loc>
-     <lastmod>2017-01-10</lastmod>
+     <loc>https://courses.engr.illinois.edu/ece420//resources/python/</loc>
+     <lastmod>2017-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://courses.engr.illinois.edu/ece420//final_project/resources/</loc>
-     <lastmod>2017-01-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://courses.engr.illinois.edu/ece420//final_project/project_ideas/</loc>
-     <lastmod>2017-01-10</lastmod>
+     <loc>https://courses.engr.illinois.edu/ece420//resources/android/</loc>
+     <lastmod>2017-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
