@@ -575,6 +575,8 @@
 <script type="math/tex">O(N^2)</script> number of operations</th>
 <th>
 <script type="math/tex">O(N \log N)</script> number of operations</th>
+<th>Ratio of <script type="math/tex">O(N \log N)</script> to <script type="math/tex">O(N^2)</script>
+</th>
 </tr>
 </thead>
 <tbody>
@@ -582,34 +584,41 @@
 <td>10</td>
 <td>100</td>
 <td>10</td>
+<td>0.1</td>
 </tr>
 <tr>
 <td>100</td>
 <td>10000</td>
 <td>200</td>
+<td>0.02</td>
 </tr>
 <tr>
 <td>1000</td>
 <td>1000000</td>
 <td>3000</td>
+<td>0.003</td>
 </tr>
 <tr>
 <td>10000</td>
 <td>100000000</td>
 <td>40000</td>
+<td>0.0004</td>
 </tr>
 <tr>
 <td>100000</td>
 <td>10000000000</td>
 <td>500000</td>
+<td>0.00005</td>
 </tr>
 <tr>
 <td>1000000</td>
 <td>1000000000000</td>
 <td>6000000</td>
+<td>0.000006</td>
 </tr>
 </tbody>
 </table>
+<p>For our frame length of <script type="math/tex">N = 2880 </script>, we get a speedup of around 800x (approximately) using the frequency domain method.</p>
 </div>
 <h3 id="system-requirements">System Requirements</h3>
 <p>The Python test code has been given to mimic the final Android system. You will get an input frame of size 2880, corresponding to 60 ms of data, and you will determine the pitch (if it is voiced). If the pitch is unvoiced, you should return -1. Some things to think about:</p>
