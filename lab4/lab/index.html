@@ -549,7 +549,7 @@
 <p>The output <script type="math/tex">R_{xx}[l]</script> measures how self-similar a signal is if shifted by some lag <script type="math/tex">l</script>. If normalized to 1 at zero lag, this can be written equivalently as:</p>
 <p>
 <script type="math/tex; mode=display">
-    R_{xx}[l] = \frac{\sum_{i=0}^N x[n] x[n - l]}{\sum_{i=0}^N x[n]^2}
+    R_{xx}[l] = \frac{\sum_{n=0}^N x[n] x[n - l]}{\sum_{n=0}^N x[n]^2}
 </script>
 </p>
 <p>For a periodic signal, the lag <script type="math/tex">l</script> that maximizes <script type="math/tex">R_{xx}[l]</script> indicates the frequency of the signal. In other words, the signal takes <script type="math/tex">l</script> samples before repeating itself. This algorithm, combined with some additional modifications to prevent harmonics from being detected, comprises the <a href="http://audition.ens.fr/adc/pdf/2002_JASA_YIN.pdf">most well-known frequency estimator for speech and music</a>. </p>
@@ -561,7 +561,7 @@
     R_{xx}[l] = \mathcal{F}^{-1}\left\{ \mathcal{F}\left\{x\right\} \tilde{\mathcal{F}}\left\{x\right\} \right\},
 </script>
 </p>
-<p>or in pseudocode, <code>autoc = ifft(fft(x) * conj(fft(x))</code>. This is an enormously powerful result. Computing the FFT or inverse FFT is only <script type="math/tex">O(N \log N)</script>, and element-wise multiplication only <script type="math/tex">O(N)</script>. We can reuse the result of one of the FFTs to only require one FFT, one inverse FFT, and one full multiplication. Our total computational complexity is then <script type="math/tex">O(2 N \log N + N)</script>. Big O notation typically drops all but the dominant term, so our final cost is <script type="math/tex">O(N \log N)</script>.</p>
+<p>or in pseudocode, <code>autoc = ifft(fft(x) * conj(fft(x))</code>. This is an enormously powerful result. Computing the FFT or inverse FFT is only <script type="math/tex">O(N \log N)</script>, and element-wise multiplication only <script type="math/tex">O(N)</script>. We can reuse the result of one of the FFTs to only require one FFT, one inverse FFT, and one full multiplication. Our total computational complexity is then <script type="math/tex">O(2 N \log N + N)</script>. Big O notation typically drops all but the dominant term, so our final cost is considered <script type="math/tex">O(N \log N)</script>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Note</p>
 <p>For visualization, the table below demonstrates the growth in <script type="math/tex">N</script> of the two Big O costs.</p>
@@ -623,8 +623,8 @@
 <h3 id="system-requirements">System Requirements</h3>
 <p>The Python test code has been given to mimic the final Android system. You will get an input frame of size 2880, corresponding to 60 ms of data, and you will determine the pitch (if it is voiced). If the pitch is unvoiced, you should return -1. Some things to think about:</p>
 <ul>
-<li>The autocorrelation will be periodic for speech signals with many candidate peaks. How do you decide which peak to use? </li>
-<li>The autocorrelation will be maximal in the neighborhood surrounding zero lag. How do you decide what to ignore? </li>
+<li>The autocorrelation for speech signals will be periodic with many candidate peaks. How do you decide which peak to use? </li>
+<li>The autocorrelation for any signal will be maximal in the neighborhood surrounding zero lag. How do you decide what to ignore? </li>
 <li>Why did we choose 60 ms frames?</li>
 </ul>
 <div class="admonition note">
@@ -633,6 +633,26 @@
 <p>Do not rely on built-in functions such as <code>np.correlate()</code>, and don't worry about frame boundaries.</p>
 </div>
 <h2 id="android">Android</h2>
+<p>If you've implemented your Python system without relying on many built-ins, it should translate nicely to Android. Your code will reside in <code>cpp/ece420_main.cpp:ece420ProcessFrame()</code> as before. The library <code>ece420_lib.cpp</code> contains some functions that you may find useful. Namely, <code>findMaxArrayIdx()</code> will return the index of the maximum value in a <code>float</code> array, given some minimum index (inclusive) and some maximum index (exclusive). For example:</p>
+<div class="codehilite"><pre><span></span><span class="kt">float</span> <span class="n">arr</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">};</span>
+
+<span class="c1">// Finds the index of the maximum value only considering indices 3, 4, 5, 6</span>
+<span class="c1">// Remember, C++ and Python are both zero-indexed</span>
+<span class="kt">int</span> <span class="n">maxIdx</span> <span class="o">=</span> <span class="n">findMaxArrayIdx</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
+
+<span class="c1">// maxIdx == 5</span>
+</pre></div>
+
+
+<div class="admonition note">
+<p class="admonition-title">Assignment</p>
+<p>Implement the block diagram described in the Python section in <code>cpp/ece420_main.cpp:ece420ProcessFrame()</code>. At the end of each processing block, write your detected frequency to <code>lastFreqDetected</code>. If the buffer was unvoiced, write <code>-1</code> to <code>lastFreqDetected</code>. </p>
+<p>Your lab will be graded on how well your Android system works. Namely:</p>
+<ul>
+<li>Is the voiced/unvoiced detection reasonable?</li>
+<li>Are you accurately detecting the fundamental frequency and not the harmonics? </li>
+</ul>
+</div>
 <h2 id="grading">Grading</h2>
 <p>Your lab will be graded as follows:</p>
 <ul>
