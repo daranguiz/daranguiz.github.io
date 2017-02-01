@@ -3,8 +3,8 @@
 
     
     <url>
-     <loc>https://courses.engr.illinois.edu/ece420//</loc>
-     <lastmod>2017-01-14</lastmod>
+     <loc>/</loc>
+     <lastmod>2017-01-31</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,8 +12,14 @@
     
         
     <url>
-     <loc>https://courses.engr.illinois.edu/ece420//lab1/</loc>
-     <lastmod>2017-01-14</lastmod>
+     <loc>/lab2/prelab/</loc>
+     <lastmod>2017-01-31</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/lab3/prelab/</loc>
+     <lastmod>2017-01-31</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -22,14 +28,42 @@
     
         
     <url>
-     <loc>https://courses.engr.illinois.edu/ece420//resources/python/</loc>
-     <lastmod>2017-01-14</lastmod>
+     <loc>/lab1/lab/</loc>
+     <lastmod>2017-01-31</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://courses.engr.illinois.edu/ece420//resources/android/</loc>
-     <lastmod>2017-01-14</lastmod>
+     <loc>/lab2/lab/</loc>
+     <lastmod>2017-01-31</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/lab3/lab/</loc>
+     <lastmod>2017-01-31</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/lab4/lab/</loc>
+     <lastmod>2017-01-31</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/resources/python/</loc>
+     <lastmod>2017-01-31</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/resources/android/</loc>
+     <lastmod>2017-01-31</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

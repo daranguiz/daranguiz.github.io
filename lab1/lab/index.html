@@ -1,0 +1,883 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The course webpage of ECE 420 for Fall 2017">
+      
+      
+      
+      
+        <link rel="shortcut icon" href="../../favicon.ico">
+      
+      <meta name="generator" content="mkdocs+mkdocs-material#1.0.1">
+    
+    
+      
+        <title>Lab 1 - IMU Pedometer - ECE 420 - Fall 2017</title>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-facb31f4a3.js"></script>
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-e0a21a99ab.css">
+      
+      
+    
+    
+  </head>
+  
+  
+  
+  
+    <body>
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="ECE 420 - Fall 2017" class=" md-icon md-icon--home  md-header-nav__button">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Labs
+                </span>
+              
+            
+            Lab 1 - IMU Pedometer
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false">
+      <label class="md-icon md-search__icon" for="search"></label>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+          </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <i class=" md-icon md-icon--home  md-nav__button">
+      
+    </i>
+    ECE 420 - Fall 2017
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  <li class="md-nav__item">
+    
+      <a href="../.." title="Home" class="md-nav__link">
+        Home
+      </a>
+    
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Prelabs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-2">
+        Prelabs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../lab2/prelab/" title="Prelab 2 - IIR Filtering" class="md-nav__link">
+        Prelab 2 - IIR Filtering
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../lab3/prelab/" title="Prelab 3 - Fourier Transforms" class="md-nav__link">
+        Prelab 3 - Fourier Transforms
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Labs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-3">
+        Labs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Lab 1 - IMU Pedometer
+      </label>
+    
+    <a href="./" title="Lab 1 - IMU Pedometer" class="md-nav__link md-nav__link--active">
+      Lab 1 - IMU Pedometer
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" title="Summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downloads" title="Downloads" class="md-nav__link">
+    Downloads
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python" title="Python" class="md-nav__link">
+    Python
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-python-interpreter-in-pycharm" title="Set up Python Interpreter in PyCharm." class="md-nav__link">
+    Set up Python Interpreter in PyCharm.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-new-project-in-pycharm" title="Create a new Project in PyCharm." class="md-nav__link">
+    Create a new Project in PyCharm.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plot-the-sensor-data" title="Plot the sensor data" class="md-nav__link">
+    Plot the sensor data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-your-program" title="Run your program" class="md-nav__link">
+    Run your program
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-your-code" title="Debug your code" class="md-nav__link">
+    Debug your code
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-in-the-ipython-console" title="Debug in the IPython Console" class="md-nav__link">
+    Debug in the IPython Console
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-your-function" title="Define your function" class="md-nav__link">
+    Define your function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#android" title="Android" class="md-nav__link">
+    Android
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explore-the-project" title="Explore the Project" class="md-nav__link">
+    Explore the Project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#button-event-listener" title="Button event listener" class="md-nav__link">
+    Button event listener
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotting-the-sensor-data" title="Plotting the sensor data" class="md-nav__link">
+    Plotting the sensor data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#developer-mode-on-the-shield-tablet" title="Developer mode on the SHIELD tablet." class="md-nav__link">
+    Developer mode on the SHIELD tablet.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-the-step-detector-app" title="Run the step detector app" class="md-nav__link">
+    Run the step detector app
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging-your-app" title="Debugging your app." class="md-nav__link">
+    Debugging your app.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-the-stepdetector-class" title="Understanding the StepDetector class" class="md-nav__link">
+    Understanding the StepDetector class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turn-in-your-assignments" title="Turn in your assignments" class="md-nav__link">
+    Turn in your assignments
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../lab2/lab/" title="Lab 2 - Audio Filtering" class="md-nav__link">
+        Lab 2 - Audio Filtering
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../lab3/lab/" title="Lab 3 - Spectrogram" class="md-nav__link">
+        Lab 3 - Spectrogram
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../lab4/lab/" title="Lab 4 - Pitch Detection" class="md-nav__link">
+        Lab 4 - Pitch Detection
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Resources
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-4">
+        Resources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../resources/python/" title="Python" class="md-nav__link">
+        Python
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../resources/android/" title="Android" class="md-nav__link">
+        Android
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" title="Summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downloads" title="Downloads" class="md-nav__link">
+    Downloads
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python" title="Python" class="md-nav__link">
+    Python
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-python-interpreter-in-pycharm" title="Set up Python Interpreter in PyCharm." class="md-nav__link">
+    Set up Python Interpreter in PyCharm.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-new-project-in-pycharm" title="Create a new Project in PyCharm." class="md-nav__link">
+    Create a new Project in PyCharm.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plot-the-sensor-data" title="Plot the sensor data" class="md-nav__link">
+    Plot the sensor data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-your-program" title="Run your program" class="md-nav__link">
+    Run your program
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-your-code" title="Debug your code" class="md-nav__link">
+    Debug your code
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-in-the-ipython-console" title="Debug in the IPython Console" class="md-nav__link">
+    Debug in the IPython Console
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-your-function" title="Define your function" class="md-nav__link">
+    Define your function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#android" title="Android" class="md-nav__link">
+    Android
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explore-the-project" title="Explore the Project" class="md-nav__link">
+    Explore the Project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#button-event-listener" title="Button event listener" class="md-nav__link">
+    Button event listener
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotting-the-sensor-data" title="Plotting the sensor data" class="md-nav__link">
+    Plotting the sensor data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#developer-mode-on-the-shield-tablet" title="Developer mode on the SHIELD tablet." class="md-nav__link">
+    Developer mode on the SHIELD tablet.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-the-step-detector-app" title="Run the step detector app" class="md-nav__link">
+    Run the step detector app
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging-your-app" title="Debugging your app." class="md-nav__link">
+    Debugging your app.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-the-stepdetector-class" title="Understanding the StepDetector class" class="md-nav__link">
+    Understanding the StepDetector class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turn-in-your-assignments" title="Turn in your assignments" class="md-nav__link">
+    Turn in your assignments
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+               
+              
+                
+                <h1 id="lab-1">Lab 1</h1>
+<h3 id="summary">Summary</h3>
+<p>In this lab, you get familiarized with PyCharm and Android Studio development environment. Using a simple step detector as an example, you will write and debug your code in Python first, and later in Android.</p>
+<h3 id="downloads">Downloads</h3>
+<p><a href="../ece420_lab1_android.zip">Android Project source code</a></p>
+<h2 id="python">Python</h2>
+<p>Download <a href="https://www.jetbrains.com/pycharm/">PyCharm</a> to your computer. If you are on your personal computer, you might apply for the <a href="https://www.jetbrains.com/student/">Educational license</a>. Install <a href="https://www.continuum.io/downloads">Anaconda</a> Python distribution. The Python 3.5 distribution is used in this tutorial.</p>
+<h3 id="set-up-python-interpreter-in-pycharm">Set up Python Interpreter in PyCharm.</h3>
+<ul>
+<li>
+<p>Open PyCharm. Go to PyCharm Preferences</p>
+</li>
+<li>
+<p>Go to Project Interpreter. Navigate to Anaconda python path on your computer: <code>/anaconda/bin/python</code> on Mac or <code>C:\Users\YourUserName\anaconda\bin\python</code> on Windows. Click OK.</p>
+</li>
+</ul>
+<h3 id="create-a-new-project-in-pycharm">Create a new Project in PyCharm.</h3>
+<ul>
+<li>
+<p>Go to File -&gt; New Project or Create New Project from the PyCharm Welcome Screen.</p>
+</li>
+<li>
+<p>Pick a Pure Python project. Make sure the Interpreter is set to the Anaconda distribution.</p>
+</li>
+<li>
+<p>Name your project <code>lab1</code> (or a name you prefer). Click OK.</p>
+</li>
+<li>
+<p>Right click the lab1 Navigation bar. Choose New -&gt; Python File. Name it <code>peak_detection.py</code>. Click OK.</p>
+</li>
+</ul>
+<p><img alt="**New Project**" src="../new_project.png" /></p>
+<h3 id="plot-the-sensor-data">Plot the sensor data</h3>
+<p>We generated sample sensor data in the file  <a href="../sample_sensor_data.csv">sample_sensor_data.csv</a>.
+Copy <code>sample_sensor_data.csv</code> to your lab1 folder.</p>
+<p>In the file <code>peak_detection.py</code>, type the following code (you may ignore line number 5):</p>
+<p><img alt="**Plotting code**" src="../code1.png" /></p>
+<p>We imported the necessary libraries (<a href="http://www.numpy.org">numpy</a>, <a href="http://matplotlib.org">matplotlib</a> and <a href="https://docs.python.org/2/library/os.html">os</a>) from lines 1 to 3. If your csv file is not in the lab1 folder, you can use <code>os.chdir()</code> to navigate to the correct path like in line 5.</p>
+<p>The accelerometer and gyroscope data are extracted in line 11 and 12. The time vector is extracted in line 9. Let's plot the first axis of accelerometer data in line 14 and 15.</p>
+<h3 id="run-your-program">Run your program</h3>
+<p>Right click anywhere inside the code page and choose <code>Run 'peak_detection'</code>.</p>
+<p><img alt="**Running code**" src="../run_code.png" /></p>
+<p>The plot is as follows:</p>
+<p><img alt="Sensor data" src="../code1_output.png" /></p>
+<p>Close the figure to stop the program from running.</p>
+<div class="admonition note">
+<p class="admonition-title">Assignment 1</p>
+<p>Give your plot a title of "First axis of accelerometer data". Name your x-axis "Time" and your y-axis "Meters per second.</p>
+<p>Show the TA when done.</p>
+</div>
+<h3 id="debug-your-code">Debug your code</h3>
+<p>Click on the space between the code the the line number on line 14 to set a break point (red circle).</p>
+<p><img alt="Debug" src="../debug.png" /></p>
+<p>Right click inside the <code>peak_detection.py</code> or click on the Debug button on the top right corner of PyCharm (the bug symbol). The execution will stop at line 14.</p>
+<p>In the Debug console, you can view all the variables currently created. If it is a numpy array, you can click on View as Array (at the end of the row) to view it as a table.
+ <img alt="Debug View" src="../debug_view.png" /></p>
+<h3 id="debug-in-the-ipython-console">Debug in the IPython Console</h3>
+<p>While in the Debug mode, you can write code on the fly to test out your logic. Switch to the Console tab and choose Show Python Prompt (where the red arrow points to)</p>
+<p><img alt="Python Prompt" src="../python_prompt.png" /></p>
+<p>This is the python interactive console connected to your debugger. For example, let's find the maximum value of the accelerometer data in the console. Type <code>accel_data[0].max()</code>  in the console and press enter. It should give a value of <code>12.507</code>.</p>
+<p>More info on how to step through your program <a href="https://www.jetbrains.com/help/pycharm/2016.1/stepping-through-the-program.html">here</a>.</p>
+<h3 id="define-your-function">Define your function</h3>
+<p>Now let's define a <a href="https://www.tutorialspoint.com/python/python_functions.htm">function</a> to find a peak in your signal.
+Go to the top of the function and define a function peak_detection on line 4. Please type the following lines:</p>
+<p><img alt="Function" src="../def_fnc.png" /></p>
+<p>The function accepts the time array <code>t</code> and the accelerometer data array <code>sig</code>.</p>
+<p>We define a Python <a href="https://developers.google.com/edu/python/lists">list</a> of peaks on line 5. For now we detect a single peak, the maximum value of our signal. We use a for loop (line 8) to traverse through the our array <code>sig</code>. Initially, the <code>max_val</code> is set to minus infinity (why?). Every time we encounter a greater value than <code>max_val</code> (line 9), we record this value and its time position (line 10 and 11).</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Python relies on <a href="http://www.diveintopython.net/getting_to_know_python/indenting_code.html">indentation</a> to differentiate different parts of the code.</p>
+</div>
+<p>The position and the maximum value are appended to the list of <code>peaks</code> in line 13. In line 14, we turn our list to numpy array for plotting and return it to the calling function.</p>
+<p>Now that we define our function, we can call it and plot our peak.
+Add this line before the plot function:</p>
+<div class="codehilite"><pre><span></span><span class="n">max_peaks</span> <span class="o">=</span> <span class="n">peak_detection</span><span class="p">(</span><span class="n">timestamps</span><span class="p">,</span> <span class="n">accel_data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+
+
+<p>Add this line of code after the plot function (line 14).</p>
+<div class="codehilite"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">max_peaks</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">max_peaks</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="admonition tip">
+<p class="admonition-title">Question</p>
+<p>What is the dimension of max_peaks?</p>
+</div>
+<p>Now run or debug your program. You should see a red peak overlaid onto the signal.</p>
+<p><img alt="Peak Plot" src="../peak_plot.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Assignment 2</p>
+<p>Modify the <code>peak_detection</code> function to detect other peaks in the signal. Add the new peaks and time positions to our <code>peaks</code> list. The function should accept a new input parameter <code>thresh</code> (peaks should have value greater than <code>thresh</code>).</p>
+<p>Rename your python file to <code>firstname_lastName.py</code> when you submit it.</p>
+<p>Here is a sample output:</p>
+<p><img alt="Sample_solution" src="../sample_solution.png" /></p>
+</div>
+<h2 id="android">Android</h2>
+<p>Download <a href="https://developer.android.com/studio/index.html">Android Studio</a>. On the Welcome Screen, click Configure -&gt; SDK Manager.</p>
+<p><img alt="Welcome Screen" src="../welcome_screen.png" /></p>
+<p>Switch to tab SDK tools, and check the boxes as in the figure below. These will install the requisite Java SDK, C++ NDK, and debugging tools. Click OK to install.</p>
+<p><img alt="SDK Tools" src="../sdk_tools.png" /></p>
+<p>Choose Open an existing Android Project. Navigate to the lab1 project. It might take a few seconds for Android Studio to index the files and configurations.</p>
+<p><img alt="Import Project" src="../load_project.png" />.</p>
+<h3 id="explore-the-project">Explore the Project</h3>
+<p>Choose the Android tab from the Project Sidebar. Expand the <code>java</code> and <code>res</code> folder. Double click on the <code>activity_pedometer_simple.xml</code> in the <code>res/layout</code> folder.</p>
+<p><img alt="Android View" src="../android_view.png" /></p>
+<p>Our user interface consists of a label which says "Hello world!" and a <code>GraphView</code> to display our pedometer signal. Click on the text label, in the popped out Properties tool bar, change the text from "Hello World!" to "Steps Detected". Save your changes.</p>
+<p><img alt="Design View" src="../design_view.png" /></p>
+<p>Drag two buttons from the Widgets in the Palette View on the left side into our <code>PedometerSimple</code> layout.</p>
+<p><img alt="Add two buttons" src="../two_buttons.png" /></p>
+<p>Switch to the Text view (at the bottom left, next to Design tab) to edit the layout of our user interface in xml.</p>
+<p><img alt="Xml View" src="../xml_view.png" /></p>
+<p>The above xml view is before the buttons are added.</p>
+<ul>
+<li>
+<p>Right click on the line <code>android:id="@+id/button"</code> and choose Refactor-&gt;Rename, and rename it to <code>buttonStart</code>. Notice that all of the references to button change to <code>buttonStart</code>.</p>
+</li>
+<li>
+<p>Change the text of the Buttons to "Start!" and "Stop!" (in the android:text properties). And change the <code>android:id</code> of the Stop Button to <code>buttonStop</code>.</p>
+</li>
+<li>
+<p>Save the xml file and switch back the Design View to see your new design.</p>
+</li>
+</ul>
+<h3 id="button-event-listener">Button event listener</h3>
+<p>Navigate to <code>java</code> folder. Expand <code>com.ece420.lab1</code> and open <code>PedometerSimple.java</code>.</p>
+<p>A <code>TextView</code> named <code>textStatus</code> and a <code>Button</code> named <code>buttonStart</code> are declared in line 25 and 26. We connect those two variables to the user interface components in line 43 to 44.</p>
+<p>When you press the Start Button, the code from line 49 to 57 will run. These are event handlers for the button click event. We start our data collection using the <code>SensorReader.startCollection()</code> function and change the label <code>textStatus</code> to <code>"Started"</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Assignment 3</p>
+<p>Create a variable named <code>buttonStop</code> (of class <code>Button</code>) and connect this variable to the <code>buttonStop</code> UI element by using the function <code>findViewById</code>.</p>
+<p>Under the <code>buttonStart.setOnClickListener()</code> event handler, write the event handler for the <code>buttonStop</code> click event as follows:</p>
+<p>If the <code>sensorsOn</code> variable is <code>true</code>, set it to <code>false</code> and call the <code>StopCollection()</code> function on the <code>mSensorReader</code> class instance. Also set the <code>textStatus</code> label to "<code>Stopped!"</code>.</p>
+<p><strong>Question</strong> : What do <code>onResume()</code> and <code>onPause()</code> function do?</p>
+<p>Please ask your TA to check your answers before continuing the next part.</p>
+</div>
+<h3 id="plotting-the-sensor-data">Plotting the sensor data</h3>
+<p>Line 78 to 86 is where we connect our Plotting Control (GraphView) in the user interface to our java code. (your line number might change. See the figure below)</p>
+<p><img alt="Plot Sensor Data" src="../accel_graph.png" /></p>
+<p>Since Android 6.0, Android apps request permissions when they are running, not when they are installed. In our code, we asked for permissions to read and write to the external storage. (line 89 to line 99).</p>
+<p><img alt="Granting permission" src="../permission.png" /></p>
+<h3 id="developer-mode-on-the-shield-tablet">Developer mode on the SHIELD tablet.</h3>
+<p>From the home screen of your tablet, swipe down twice and choose the Settings icon. Scroll down to the About Tablet setting. Inside the About Tablet setting, find the Build Number item. Tap <strong>7</strong> times, and there will be notifications informing that you are now a developer.</p>
+<p>Go back to the main Settings menu, and choose the Developer options. Turn on the USB debugging.
+Connect your tablet to your computer via USB. Say yes to the <code>rsa-fingerprint</code> notification.</p>
+<p>If you are on Windows, you may need to install the OEM USB Drivers for your device. See <a href="https://developer.android.com/studio/run/device.html">this page</a> for help if your device is not automatically recognized.</p>
+<h3 id="run-the-step-detector-app">Run the step detector app</h3>
+<p>Go to the <code>Run</code> menu and choose <code>Run app</code>. This will handle building the Android target and uploading the APK to the device.</p>
+<p>Choose the <code>NVIDIA SHIELD TABLET</code> when the Select Deployment Target screen appears. Your application will display a continuous stream of sensor data and the estimated number of steps based on the accelerometer readings.</p>
+<p align="center">
+<img src="../app_running.png" alt="Step Detector App" style="height: 1000px;"/>
+</p>
+
+<h3 id="debugging-your-app">Debugging your app.</h3>
+<p>Open <code>StepDetector.java</code>. Set a breakpoint at line 53 (click on the space next to the line number). In the <code>Run</code> menu, choose <code>Debug app</code> (or choose the Debug app symbol in the toolbar). Notice the similarity between PyCharm and Android Studio debugging mode.</p>
+<p>Once your app shows up, press the Start button on the tablet to begin recording data.</p>
+<p><img alt="" src="../debug_app.png" /></p>
+<p>Android Studio has multiple ways to step through code. For now, click <code>Step Over</code> to move the code to the next line.</p>
+<p>Switch to the Android Monitor tab. You can see the output of the <code>Log.d()</code> function in this window. Android's <a href="https://developer.android.com/reference/android/util/Log.html">Log function</a> is a useful tool for debugging and monitoring your app.</p>
+<p>In the Android Monitor view, type <code>STEP_DETECTOR</code> (the <code>TAG</code> that we used in the <code>Log</code> function) in the search field and press Enter to filter out other <code>Log</code> outputs.</p>
+<p>Go back to the Debug mode, remove the breakpoint (click on the red circle) and click <code>Resume</code> (the play button in the left column).</p>
+<p>Now switch back to the Android Monitor Window. Observe that whenever the code detects a peak, the Android Monitor shows the output of our <code>Log</code> function, which is every time the accelerometer value is greater than <code>ACCEL_THRESHOLD</code> (line 52).</p>
+<h3 id="understanding-the-stepdetector-class">Understanding the StepDetector class</h3>
+<p>The <code>StepDetector</code> class detects peaks for an online stream of data. It stores the accelerometer values in the <code>accelBuffer</code> list. The buffer has a size of <code>N_SAMPLES = 11</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Question</p>
+<p>What does <code>timeSinceLastStep</code> do?</p>
+</div>
+<h3 id="turn-in-your-assignments">Turn in your assignments</h3>
+<p>Please send your Python peak detection code (Assignment 2) to all of the TAs.
+Name your file <code>firstname_lastName.py</code>. These should be submitted individually.</p>
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../lab3/prelab/" title="Prelab 3 - Fourier Transforms" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Prelab 3 - Fourier Transforms
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../lab2/lab/" title="Lab 2 - Audio Filtering" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Lab 2 - Audio Filtering
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-16f434a21a.js"></script>
+      <script>var config={url:{base:"../.."}},app=new Application(config);app.initialize()</script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
