@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2017-02-01</lastmod>
+     <lastmod>2017-02-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,13 +13,25 @@
         
     <url>
      <loc>/lab2/prelab/</loc>
-     <lastmod>2017-02-01</lastmod>
+     <lastmod>2017-02-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/lab3/prelab/</loc>
-     <lastmod>2017-02-01</lastmod>
+     <lastmod>2017-02-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/lab4/prelab/</loc>
+     <lastmod>2017-02-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/lab5/prelab/</loc>
+     <lastmod>2017-02-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -29,25 +41,31 @@
         
     <url>
      <loc>/lab1/lab/</loc>
-     <lastmod>2017-02-01</lastmod>
+     <lastmod>2017-02-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/lab2/lab/</loc>
-     <lastmod>2017-02-01</lastmod>
+     <lastmod>2017-02-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/lab3/lab/</loc>
-     <lastmod>2017-02-01</lastmod>
+     <lastmod>2017-02-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/lab4/lab/</loc>
-     <lastmod>2017-02-01</lastmod>
+     <lastmod>2017-02-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/lab5/lab/</loc>
+     <lastmod>2017-02-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -57,13 +75,13 @@
         
     <url>
      <loc>/resources/python/</loc>
-     <lastmod>2017-02-01</lastmod>
+     <lastmod>2017-02-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/resources/android/</loc>
-     <lastmod>2017-02-01</lastmod>
+     <lastmod>2017-02-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

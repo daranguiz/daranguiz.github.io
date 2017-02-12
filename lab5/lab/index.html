@@ -1,0 +1,691 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The course webpage of ECE 420 for Fall 2017">
+      
+      
+      
+      
+        <link rel="shortcut icon" href="../../favicon.ico">
+      
+      <meta name="generator" content="mkdocs+mkdocs-material#1.0.1">
+    
+    
+      
+        <title>Lab 5 - Pitch Synthesis - ECE 420 - Fall 2017</title>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-facb31f4a3.js"></script>
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-e0a21a99ab.css">
+      
+      
+    
+    
+  </head>
+  
+  
+  
+  
+    <body>
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="ECE 420 - Fall 2017" class=" md-icon md-icon--home  md-header-nav__button">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Labs
+                </span>
+              
+            
+            Lab 5 - Pitch Synthesis
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false">
+      <label class="md-icon md-search__icon" for="search"></label>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+          </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <i class=" md-icon md-icon--home  md-nav__button">
+      
+    </i>
+    ECE 420 - Fall 2017
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  <li class="md-nav__item">
+    
+      <a href="../.." title="Home" class="md-nav__link">
+        Home
+      </a>
+    
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Prelabs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-2">
+        Prelabs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../lab2/prelab/" title="Prelab 2 - IIR Filtering" class="md-nav__link">
+        Prelab 2 - IIR Filtering
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../lab3/prelab/" title="Prelab 3 - Fourier Transforms" class="md-nav__link">
+        Prelab 3 - Fourier Transforms
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../lab4/prelab/" title="Prelab 4 - Autocorrelation" class="md-nav__link">
+        Prelab 4 - Autocorrelation
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../prelab/" title="Prelab 5 - Resampling" class="md-nav__link">
+        Prelab 5 - Resampling
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Labs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-3">
+        Labs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../lab1/lab/" title="Lab 1 - IMU Pedometer" class="md-nav__link">
+        Lab 1 - IMU Pedometer
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../lab2/lab/" title="Lab 2 - Audio Filtering" class="md-nav__link">
+        Lab 2 - Audio Filtering
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../lab3/lab/" title="Lab 3 - Spectrogram" class="md-nav__link">
+        Lab 3 - Spectrogram
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../lab4/lab/" title="Lab 4 - Pitch Detection" class="md-nav__link">
+        Lab 4 - Pitch Detection
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Lab 5 - Pitch Synthesis
+      </label>
+    
+    <a href="./" title="Lab 5 - Pitch Synthesis" class="md-nav__link md-nav__link--active">
+      Lab 5 - Pitch Synthesis
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" title="Summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downloads" title="Downloads" class="md-nav__link">
+    Downloads
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#td-psola" title="TD-PSOLA" class="md-nav__link">
+    TD-PSOLA
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-filter-model-of-speech" title="Source-Filter Model of Speech" class="md-nav__link">
+    Source-Filter Model of Speech
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#td-psola-explained" title="TD-PSOLA Explained" class="md-nav__link">
+    TD-PSOLA Explained
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overlap-add-algorithm" title="Overlap-Add Algorithm" class="md-nav__link">
+    Overlap-Add Algorithm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python" title="Python" class="md-nav__link">
+    Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grading" title="Grading" class="md-nav__link">
+    Grading
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Resources
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-4">
+        Resources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../resources/python/" title="Python" class="md-nav__link">
+        Python
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../resources/android/" title="Android" class="md-nav__link">
+        Android
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" title="Summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downloads" title="Downloads" class="md-nav__link">
+    Downloads
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#td-psola" title="TD-PSOLA" class="md-nav__link">
+    TD-PSOLA
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-filter-model-of-speech" title="Source-Filter Model of Speech" class="md-nav__link">
+    Source-Filter Model of Speech
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#td-psola-explained" title="TD-PSOLA Explained" class="md-nav__link">
+    TD-PSOLA Explained
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overlap-add-algorithm" title="Overlap-Add Algorithm" class="md-nav__link">
+    Overlap-Add Algorithm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python" title="Python" class="md-nav__link">
+    Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grading" title="Grading" class="md-nav__link">
+    Grading
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+               
+              
+                
+                <h1 id="lab-5-pitch-synthesis">Lab 5 - Pitch Synthesis</h1>
+<h3 id="summary">Summary</h3>
+<p>In this lab, you will learn about a simplified model for human speech and how to exploit this model to shift the frequency of an incoming signal. You will also learn one method for producing continuous output within a batch processing framework.</p>
+<h3 id="downloads">Downloads</h3>
+<ul>
+<li><a href="">Python test harness and test vector TODO</a></li>
+<li><a href="">Android project source code TODO</a></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Some Remarks</p>
+<p>We have completed the scaffolding of the TD-PSOLA algorithm for you, leaving remapping, windowing, and overlap-add for your lab assignment. You will be responsible for knowing why our buffering scheme guarantees smoothness in the signal reconstruction, and you will also be responsible for knowing why the characteristics of human speech permit such an algorithm.</p>
+<p>We will try to explain these in detail in the lab notes, but please do not hesitate to ask your TA or ask on Piazza if these details are unclear. </p>
+</div>
+<h2 id="td-psola">TD-PSOLA</h2>
+<p>Time-Domain Pitch Synchronous Overlap-Add, or TD-PSOLA, is the pitch-shifting algorithm we will be using in this lab. It relies heavily the source-filter model of speech, detailed below.</p>
+<h3 id="source-filter-model-of-speech">Source-Filter Model of Speech</h3>
+<p>We can model speech as the output of two successive blocks, a source block and filter block:</p>
+<p><img alt="" src="../source_filter.png" /></p>
+<p>Our vocal cords are the source, and we model the output of our vocal cords as a delta train (also called a Dirac comb). Of course, our vocal cords cannot truly produce zero-width impulses of energy, but this assumption is sufficient for modeling purposes. This series of impulses determines the fundamental frequency, or the pitch, of our utterance. </p>
+<p>The impulses of energy produced by our vocal cords then travel up through our vocal tract. Everything in your vocal tract (lips, tongue throat, mouth cavity, nasal cavity, among others) affect the final waveform. We make the assumption that these effects are linear and can be combined without penalty, so we call everything inside the vocal tract the <em>filter</em>.</p>
+<p>Simplifying the complex problem of speech generation in this manner allows us to apply some signal processing tools we learned in ECE 310. In particular, if we assume that speech is nothing but the output of a filter, we can rewrite speech in the form of a transfer function where <script type="math/tex">y(t)</script> is the utterance, <script type="math/tex">x(t)</script> is the source, and <script type="math/tex">h(t)</script> is the filter:</p>
+<p>
+<script type="math/tex; mode=display">
+y(t) = x(t) * h(t)
+</script>
+</p>
+<p>Note that <script type="math/tex">*</script> denotes the convolution operator. We can further rewrite <script type="math/tex">x(t)</script>, assuming <script type="math/tex">x(t)</script> is a delta train with some period <script type="math/tex">P</script>:</p>
+<!--\[
+y(t) = \left(\sum_{k=0}^\infty \delta(t - k P)\right) * h(t) = 
+\sum_{k=0}^\infty \left( \delta(t - k P) * h(t) \right)
+
+\]-->
+
+<p>
+<script type="math/tex; mode=display">
+\begin{align}
+    y(t) &= \left(\sum_{k=0}^\infty \delta(t - k P)\right) * h(t) \\
+         &= \sum_{k=0}^\infty \delta(t - k P) * h(t) \\
+         &= \sum_{k=0}^\infty h(t - k P)
+\end{align}    
+</script>
+</p>
+<p>This is a wondrous result which says that the fundamental frequency (the pitch) does not depend on the filter <script type="math/tex">h(t)</script>, but on the source <script type="math/tex">x(t)</script>. In other words, speech can be decomposed into a sum of impulse responses, where the spacing of the impulse responses <script type="math/tex">P</script> determines the pitch. </p>
+<p>If we want to shift the pitch, all we need is some way of identifying the impulse response from the speech signal. We can then extract the impulse response and place it with any spacing <script type="math/tex">P</script> in the synthesis signal we desire.</p>
+<!-- TODO: generate image with delta train, impulse responses-->
+
+<h3 id="td-psola-explained">TD-PSOLA Explained</h3>
+<p>Considering the discussion above, we can rewrite our problem more formally. Given a signal <script type="math/tex">y_{P_0}(t)</script> with some fundamental period <script type="math/tex">P_0</script>:</p>
+<p>
+<script type="math/tex; mode=display">
+y_{P_0}(t) = \sum_{k=0}^\infty h(t - k P_0),
+</script>
+</p>
+<p>compute a new synthesis signal <script type="math/tex">y_{P_1}(t)</script> with a new period <script type="math/tex">P_1</script>:</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align}
+    y_{P_1}(t) &= \sum_{k=0}^\infty h(t - k P_1).
+\end{align}
+</script>
+</p>
+<p>In order to compute the new synthesis signal, we need some way of extracting the impulse response from <script type="math/tex">y_{P_0}(t)</script>. This is done by identifying the period (using the technique from Lab 4) and further identifying each <em>epoch</em> in the signal, or the location of each pitch period, by finding peaks in the signal approximately <script type="math/tex">P_0</script> samples apart. An example of this for a sample frame is shown below.</p>
+<p><img alt="" src="../epoch_markings.png" /></p>
+<p>We can then extract the impulse response (rather, an estimate of the impulse response) by windowing <script type="math/tex">\pm P_0</script> about each epoch marker. For example, when windowed with a Hanning window, an individual response may look like this:</p>
+<p><img alt="" src="../windowed_impulse_response.png" /></p>
+<p>You finally have your impulse responses; now you need to compute the mapping from your original signal to your synthesized signal. Imagine you have a series of impulse responses in your original signal:</p>
+<div class="codehilite"><pre><span></span><span class="n">orig</span><span class="o">:</span> <span class="mi">1</span>     <span class="mi">2</span>     <span class="mi">3</span>     <span class="mi">4</span>     <span class="mi">5</span>     <span class="mi">6</span>     <span class="mi">7</span>     <span class="mi">8</span>
+</pre></div>
+
+
+<p>and you want to double the frequency of the original signal, but maintain the length. This can be achieved with the following mapping:</p>
+<div class="codehilite"><pre><span></span><span class="n">orig</span><span class="o">:</span> <span class="mi">1</span>     <span class="mi">2</span>     <span class="mi">3</span>     <span class="mi">4</span>     <span class="mi">5</span>     <span class="mi">6</span>     <span class="mi">7</span>     <span class="mi">8</span>
+      <span class="o">|\</span>    <span class="o">|\</span>    <span class="o">|\</span>    <span class="o">|\</span>    <span class="o">|\</span>    <span class="o">|\</span>    <span class="o">|\</span>    <span class="o">|</span>
+      <span class="o">|</span> <span class="o">\</span>   <span class="o">|</span> <span class="o">\</span>   <span class="o">|</span> <span class="o">\</span>   <span class="o">|</span> <span class="o">\</span>   <span class="o">|</span> <span class="o">\</span>   <span class="o">|</span> <span class="o">\</span>   <span class="o">|</span> <span class="o">\</span>   <span class="o">|</span>
+<span class="k">new</span><span class="o">:</span>  <span class="mi">1</span>  <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">3</span>  <span class="mi">4</span>  <span class="mi">4</span>  <span class="mi">5</span>  <span class="mi">5</span>  <span class="mi">6</span>  <span class="mi">6</span>  <span class="mi">7</span>  <span class="mi">7</span>  <span class="mi">8</span>
+</pre></div>
+
+
+<p>where the impulse responses in the <code>new</code> signal are combined by overlapping and adding their components.</p>
+<p>Likewise, consider halving the frequency. This can be achieved with the following mapping:</p>
+<div class="codehilite"><pre><span></span><span class="n">orig</span><span class="o">:</span> <span class="mi">1</span>     <span class="mi">2</span>     <span class="mi">3</span>     <span class="mi">4</span>     <span class="mi">5</span>     <span class="mi">6</span>     <span class="mi">7</span>     <span class="mi">8</span>
+      <span class="o">|</span>           <span class="o">|</span>           <span class="o">|</span>           <span class="o">|</span>
+      <span class="o">|</span>           <span class="o">|</span>           <span class="o">|</span>           <span class="o">|</span>
+<span class="k">new</span><span class="o">:</span>  <span class="mi">1</span>           <span class="mi">3</span>           <span class="mi">5</span>           <span class="mi">7</span>
+</pre></div>
+
+
+<h3 id="overlap-add-algorithm">Overlap-Add Algorithm</h3>
+<p>This can be extended further for any multiplier with the following algorithm:</p>
+<ul>
+<li>Compute the new period spacing <script type="math/tex">P_1 = \frac{F_s}{F_\text{new}}</script>
+</li>
+<li>For every new epoch at <script type="math/tex">i = \left\{P_1, 2 P_1, 3 P_1, \dots\right\}</script>:<ul>
+<li>Find the closest epoch in the original signal</li>
+<li>Approximate the impulse response by applying a Hanning window of length <script type="math/tex">2 P_0 + 1</script> centered at the original epoch</li>
+<li>Overlap and add the windowed epoch into your new buffer centered at index <script type="math/tex">i</script>
+</li>
+</ul>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><a href="http://www.speech.zone/td-psola-the-hard-way/">This video on doing TD-PSOLA by hand</a> is very helpful for getting an intuitive understanding of TD-PSOLA. </p>
+</div>
+<h2 id="python">Python</h2>
+<h2 id="grading">Grading</h2>
+<p>Your lab will be graded as follows:</p>
+<ul>
+<li>Prelab (2 points) </li>
+<li>Lab (4 points) </li>
+<li>Quiz (2 points) </li>
+</ul>
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../lab4/lab/" title="Lab 4 - Pitch Detection" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Lab 4 - Pitch Detection
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../resources/python/" title="Python" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Python
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-16f434a21a.js"></script>
+      <script>var config={url:{base:"../.."}},app=new Application(config);app.initialize()</script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
