@@ -325,7 +325,8 @@
     TD-PSOLA Explained
   </a>
   
-</li>
+    <nav class="md-nav">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#overlap-add-algorithm" title="Overlap-Add Algorithm" class="md-nav__link">
@@ -338,18 +339,29 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#python" title="Python" class="md-nav__link">
-    Python
+        
+          <li class="md-nav__item">
+  <a href="#buffer-manipulation" title="Buffer Manipulation" class="md-nav__link">
+    Buffer Manipulation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buffer-manipulation-algorithm" title="Buffer Manipulation Algorithm" class="md-nav__link">
+    Buffer Manipulation Algorithm
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#grading" title="Grading" class="md-nav__link">
-    Grading
-  </a>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -462,7 +474,8 @@
     TD-PSOLA Explained
   </a>
   
-</li>
+    <nav class="md-nav">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#overlap-add-algorithm" title="Overlap-Add Algorithm" class="md-nav__link">
@@ -475,18 +488,29 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#python" title="Python" class="md-nav__link">
-    Python
+        
+          <li class="md-nav__item">
+  <a href="#buffer-manipulation" title="Buffer Manipulation" class="md-nav__link">
+    Buffer Manipulation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buffer-manipulation-algorithm" title="Buffer Manipulation Algorithm" class="md-nav__link">
+    Buffer Manipulation Algorithm
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#grading" title="Grading" class="md-nav__link">
-    Grading
-  </a>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -508,8 +532,8 @@
 <p>In this lab, you will learn about a simplified model for human speech and how to exploit this model to shift the frequency of an incoming signal. You will also learn one method for producing continuous output within a batch processing framework.</p>
 <h3 id="downloads">Downloads</h3>
 <ul>
-<li><a href="">Python test harness and test vector TODO</a></li>
-<li><a href="">Android project source code TODO</a></li>
+<li>Python test harness and test vector TBA</li>
+<li>Android project source code TBA</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Some Remarks</p>
@@ -545,7 +569,7 @@ y(t) = \left(\sum_{k=0}^\infty \delta(t - k P)\right) * h(t) =
 \end{align}    
 </script>
 </p>
-<p>This is a wondrous result which says that the fundamental frequency (the pitch) does not depend on the filter <script type="math/tex">h(t)</script>, but on the source <script type="math/tex">x(t)</script>. In other words, speech can be decomposed into a sum of impulse responses, where the spacing of the impulse responses <script type="math/tex">P</script> determines the pitch. </p>
+<p>This is a powerful result which says that the fundamental frequency (the pitch) does not depend on the filter <script type="math/tex">h(t)</script>, but on the source <script type="math/tex">x(t)</script>. In other words, speech can be decomposed into a sum of impulse responses, where the spacing of the impulse responses <script type="math/tex">P</script> determines the pitch. </p>
 <p>If we want to shift the pitch, all we need is some way of identifying the impulse response from the speech signal. We can then extract the impulse response and place it with any spacing <script type="math/tex">P</script> in the synthesis signal we desire.</p>
 <!-- TODO: generate image with delta train, impulse responses-->
 
@@ -568,12 +592,13 @@ y_{P_0}(t) = \sum_{k=0}^\infty h(t - k P_0),
 <p><img alt="" src="../epoch_markings.png" /></p>
 <p>We can then extract the impulse response (rather, an estimate of the impulse response) by windowing <script type="math/tex">\pm P_0</script> about each epoch marker. For example, when windowed with a Hanning window, an individual response may look like this:</p>
 <p><img alt="" src="../windowed_impulse_response.png" /></p>
-<p>You finally have your impulse responses; now you need to compute the mapping from your original signal to your synthesized signal. Imagine you have a series of impulse responses in your original signal:</p>
+<p>Now that we have a method of estimating the impulse responses, we simply need to map from the original spacing <script type="math/tex">y_{P_0}(t) = \sum_{k=0}^\infty h(t - k P_0)</script> to the synthesis spacing <script type="math/tex">y_{P_1}(t) = \sum_{k=0}^\infty h(t - k P_1)</script>. In other words, we need to determine where the original impulse responses should go in our new signal.</p>
+<p>Imagine our original signal has epochs spaced as below:</p>
 <div class="codehilite"><pre><span></span><span class="n">orig</span><span class="o">:</span> <span class="mi">1</span>     <span class="mi">2</span>     <span class="mi">3</span>     <span class="mi">4</span>     <span class="mi">5</span>     <span class="mi">6</span>     <span class="mi">7</span>     <span class="mi">8</span>
 </pre></div>
 
 
-<p>and you want to double the frequency of the original signal, but maintain the length. This can be achieved with the following mapping:</p>
+<p>and we want to double the frequency of the original signal without changing the duration. This can be achieved by spacing our new epochs at <script type="math/tex">P_1 = \frac{P_0}{2}</script>. For every new epoch at <script type="math/tex">\left\{ P_1, 2 P_1, 3 P_1, \dots \right\}</script>, we need to find the nearest epoch in the original signal. This mapping is shown below for our example signal:</p>
 <div class="codehilite"><pre><span></span><span class="n">orig</span><span class="o">:</span> <span class="mi">1</span>     <span class="mi">2</span>     <span class="mi">3</span>     <span class="mi">4</span>     <span class="mi">5</span>     <span class="mi">6</span>     <span class="mi">7</span>     <span class="mi">8</span>
       <span class="o">|\</span>    <span class="o">|\</span>    <span class="o">|\</span>    <span class="o">|\</span>    <span class="o">|\</span>    <span class="o">|\</span>    <span class="o">|\</span>    <span class="o">|</span>
       <span class="o">|</span> <span class="o">\</span>   <span class="o">|</span> <span class="o">\</span>   <span class="o">|</span> <span class="o">\</span>   <span class="o">|</span> <span class="o">\</span>   <span class="o">|</span> <span class="o">\</span>   <span class="o">|</span> <span class="o">\</span>   <span class="o">|</span> <span class="o">\</span>   <span class="o">|</span>
@@ -581,7 +606,21 @@ y_{P_0}(t) = \sum_{k=0}^\infty h(t - k P_0),
 </pre></div>
 
 
-<p>where the impulse responses in the <code>new</code> signal are combined by overlapping and adding their components.</p>
+<p>The impulse responses in the <code>new</code> signal are combined by overlapping and adding their components. In Python, overlap and add is simply:</p>
+<div class="codehilite"><pre><span></span><span class="n">original_signal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+<span class="c1"># Window, compute impulse response</span>
+<span class="o">...</span> 
+
+<span class="k">for</span> <span class="n">new_epoch_idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">P_1</span><span class="p">):</span>
+    <span class="n">original_signal</span><span class="p">[</span><span class="n">new_epoch_idx</span> <span class="o">-</span> <span class="n">P_1</span><span class="p">:</span><span class="n">new_epoch_idx</span> <span class="o">+</span> <span class="n">P_1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">windowed_response</span>
+</pre></div>
+
+
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The code above does not check if array indices are valid, so be careful.</p>
+</div>
 <p>Likewise, consider halving the frequency. This can be achieved with the following mapping:</p>
 <div class="codehilite"><pre><span></span><span class="n">orig</span><span class="o">:</span> <span class="mi">1</span>     <span class="mi">2</span>     <span class="mi">3</span>     <span class="mi">4</span>     <span class="mi">5</span>     <span class="mi">6</span>     <span class="mi">7</span>     <span class="mi">8</span>
       <span class="o">|</span>           <span class="o">|</span>           <span class="o">|</span>           <span class="o">|</span>
@@ -590,7 +629,7 @@ y_{P_0}(t) = \sum_{k=0}^\infty h(t - k P_0),
 </pre></div>
 
 
-<h3 id="overlap-add-algorithm">Overlap-Add Algorithm</h3>
+<h4 id="overlap-add-algorithm">Overlap-Add Algorithm<a name='ola_algo'></a></h4>
 <p>This can be extended further for any multiplier with the following algorithm:</p>
 <ul>
 <li>Compute the new period spacing <script type="math/tex">P_1 = \frac{F_s}{F_\text{new}}</script>
@@ -607,14 +646,89 @@ y_{P_0}(t) = \sum_{k=0}^\infty h(t - k P_0),
 <p class="admonition-title">Tip</p>
 <p><a href="http://www.speech.zone/td-psola-the-hard-way/">This video on doing TD-PSOLA by hand</a> is very helpful for getting an intuitive understanding of TD-PSOLA. </p>
 </div>
-<h2 id="python">Python</h2>
-<h2 id="grading">Grading</h2>
-<p>Your lab will be graded as follows:</p>
+<h3 id="buffer-manipulation">Buffer Manipulation</h3>
+<p>TD-PSOLA can be done on an arbitrarily long signal (as you will do in Python), but to run this algorithm in real-time, we need to use buffers. Our autocorrelation-based pitch detector requires at least 40 ms buffers, and we do not want to add any more delay than we have to, so let's keep 40 ms buffers. Our setup then is:</p>
+<div class="codehilite"><pre><span></span>bufferIn:  &lt;-- 40 ms --&gt;
+
+bufferOut: &lt;-- 40 ms --&gt;
+</pre></div>
+
+
+<p>Consider what happens if we do not do anything to ensure buffer continuity. Overlap-added Hanning windows do permit a perfect reconstruction (if we try to generate a synthesis signal with <script type="math/tex">P_0 = P_1</script>), but note what happens when we have a non-integer number of epochs in our original signal:</p>
+<p><img alt="" src="../overlap_add_hannings.png" /></p>
+<p>Everything beyond sample index 16 is perfectly reconstructed, but the samples prior are missing information for perfect reconstruction. If we do this across multiple buffers, we get a reconstruction waveform with clipping at the boundaries:</p>
+<p><img alt="" src="../multiple_buffer_reconstruction_clipped.png" /></p>
+<p>This problem does not come up when pitch shifting an entire .wav file, for example, because offline processing is allowed to be acausal. In other words, when doing this in Python, it is permissible to look into the future for your next epoch.</p>
+<p>You cannot look into the future with online processing, but you can delay your buffer slightly to fake having access to past, present, and future data.</p>
+<div class="codehilite"><pre><span></span>bufferIn:  | &lt;-- 20 ms past --&gt; | &lt;-- 20 ms present --&gt; | &lt;--     20 ms future     --&gt; |
+
+bufferOut: | &lt;-- 20 ms past --&gt; | &lt;-- 20 ms present --&gt; | &lt;-- 20 ms future (zeros) --&gt; |
+</pre></div>
+
+
+<p>Every time we get a new 20 ms frame of data, we shift it into the <code>bufferIn</code> queue as in Lab 2. Delaying our <code>present</code> buffer by 20 ms, we can then look "into the future" for our epoch computation.</p>
+<p>The trick is then how we deal with <code>bufferOut</code>. For the TD-PSOLA algorithm itself, we only compute new epochs for the <code>present</code> buffer. However, we let the <code>present</code> epochs spill over into the <code>past</code> and <code>future</code> buffers when doing overlap-add.</p>
+<p>For example, say we have the following <code>bufferIn</code>, and we have epochs at <code>0, 2, 4, 6, 8, 10, 12, 14</code> with <code>P_0 = 1</code>. </p>
+<div class="codehilite"><pre><span></span><span class="n">bufferIn</span><span class="o">:</span>  <span class="mi">0</span>   <span class="mi">1</span>   <span class="mi">2</span>   <span class="mi">3</span>   <span class="mi">4</span> <span class="o">|</span> <span class="mi">5</span>   <span class="mi">6</span>   <span class="mi">7</span>   <span class="mi">8</span>   <span class="mi">9</span> <span class="o">|</span> <span class="mi">10</span>  <span class="mi">11</span>  <span class="mi">12</span>  <span class="mi">13</span>  <span class="mi">14</span>
+</pre></div>
+
+
+<p>If we want to perfectly reconstruct the signal, we can use the same epochs as in the original signal. Because we only compute <code>present</code> buffer epoch, we only compute overlap-add for epochs <code>6, 8</code>. Assume that this iteration had run before, and the <code>past</code> buffer is already computed. <code>(N)</code> denotes an incomplete reconstruction.</p>
+<div class="codehilite"><pre><span></span><span class="n">bufferIn</span><span class="o">:</span>  <span class="mi">0</span>   <span class="mi">1</span>   <span class="mi">2</span>   <span class="mi">3</span>   <span class="mi">4</span> <span class="o">|</span> <span class="mi">5</span>   <span class="mi">6</span>   <span class="mi">7</span>   <span class="mi">8</span>   <span class="mi">9</span> <span class="o">|</span> <span class="mi">10</span>  <span class="mi">11</span>  <span class="mi">12</span>  <span class="mi">13</span>  <span class="mi">14</span>
+
+<span class="n">bufferOut</span><span class="o">:</span> <span class="mi">0</span>   <span class="mi">1</span>   <span class="mi">2</span>   <span class="mi">3</span>   <span class="mi">4</span> <span class="o">|(</span><span class="mi">5</span><span class="o">)</span>  <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span> <span class="o">|</span> <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>
+                          <span class="o">+</span><span class="n">win</span><span class="o">(</span><span class="mi">5</span>   <span class="mi">6</span>   <span class="mi">7</span><span class="o">)</span>
+                                  <span class="o">+</span><span class="n">win</span><span class="o">(</span><span class="mi">7</span>   <span class="mi">8</span>   <span class="mi">9</span><span class="o">)</span>
+         <span class="o">=</span> <span class="mi">0</span>   <span class="mi">1</span>   <span class="mi">2</span>   <span class="mi">3</span>   <span class="mi">4</span> <span class="o">|</span> <span class="mi">5</span>   <span class="mi">6</span>   <span class="mi">7</span>   <span class="mi">8</span>  <span class="o">(</span><span class="mi">9</span><span class="o">)|</span> <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>
+</pre></div>
+
+
+<p>Notice how <code>6, 7, 8</code> are perfectly reconstructed, but <code>9</code> did not yet get enough information for complete reconstruction. Our <code>past</code> buffer is perfectly reconstructed, however, so we output that buffer to the speaker and shift our <code>bufferOut</code> accordingly. In the next iteration, we have the following buffer configuration:</p>
+<div class="codehilite"><pre><span></span><span class="n">bufferIn</span><span class="o">:</span>  <span class="mi">5</span>   <span class="mi">6</span>   <span class="mi">7</span>   <span class="mi">8</span>   <span class="mi">9</span> <span class="o">|</span> <span class="mi">10</span>  <span class="mi">11</span>  <span class="mi">12</span>  <span class="mi">13</span>  <span class="mi">14</span><span class="o">|</span> <span class="mi">15</span>  <span class="mi">16</span>  <span class="mi">17</span>  <span class="mi">18</span>  <span class="mi">19</span>
+
+<span class="n">bufferOut</span><span class="o">:</span> <span class="mi">5</span>   <span class="mi">6</span>   <span class="mi">7</span>   <span class="mi">8</span>  <span class="o">(</span><span class="mi">9</span><span class="o">)|</span> <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span> <span class="o">|</span> <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>
+</pre></div>
+
+
+<p>Trying to reconstruct the <code>present</code> buffer again, we have the following:</p>
+<div class="codehilite"><pre><span></span><span class="n">bufferIn</span><span class="o">:</span>  <span class="mi">5</span>   <span class="mi">6</span>   <span class="mi">7</span>   <span class="mi">8</span>   <span class="mi">9</span> <span class="o">|</span> <span class="mi">10</span>  <span class="mi">11</span>  <span class="mi">12</span>  <span class="mi">13</span>  <span class="mi">14</span><span class="o">|</span> <span class="mi">15</span>  <span class="mi">16</span>  <span class="mi">17</span>  <span class="mi">18</span>  <span class="mi">19</span>
+
+<span class="n">bufferOut</span><span class="o">:</span> <span class="mi">5</span>   <span class="mi">6</span>   <span class="mi">7</span>   <span class="mi">8</span>  <span class="o">(</span><span class="mi">9</span><span class="o">)|</span> <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span> <span class="o">|</span> <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>
+                      <span class="o">+</span><span class="n">win</span><span class="o">(</span><span class="mi">9</span>   <span class="mi">10</span>  <span class="mi">11</span><span class="o">)</span>
+                              <span class="o">+</span><span class="n">win</span><span class="o">(</span><span class="mi">11</span>  <span class="mi">12</span>  <span class="mi">13</span><span class="o">)</span>
+                                      <span class="o">+</span><span class="n">win</span><span class="o">(</span><span class="mi">13</span>  <span class="mi">14</span>  <span class="mi">15</span><span class="o">)</span>
+         <span class="o">=</span> <span class="mi">5</span>   <span class="mi">6</span>   <span class="mi">7</span>   <span class="mi">8</span>   <span class="mi">9</span> <span class="o">|</span> <span class="mi">10</span>  <span class="mi">11</span>  <span class="mi">12</span>  <span class="mi">13</span>  <span class="mi">14</span><span class="o">|(</span><span class="mi">15</span><span class="o">)</span> <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>
+</pre></div>
+
+
+<p>By allowing our <code>present</code> computation to spill over into the <code>past</code> and <code>future</code> buffers, we can guarantee that by the end of your <code>present</code> computation, the <code>past</code> buffer will be fully reconstructed. </p>
+<h4 id="buffer-manipulation-algorithm">Buffer Manipulation Algorithm</h4>
+<p>To implement this practically, the algorithm is as follows. Let <code>FRAME_SIZE</code> be the number of samples for each 20 ms section, and let <code>i</code> point to your new epoch positions.</p>
 <ul>
-<li>Prelab (2 points) </li>
-<li>Lab (4 points) </li>
-<li>Quiz (2 points) </li>
+<li>Initialize <code>i = FRAME_SIZE</code> so it points at the first index of the <code>present</code> section of <code>bufferOut</code>. Only do this in the first iteration.</li>
+<li>While <code>i &lt; 2 * FRAME_SIZE</code>, or while <code>i</code> is inside <code>present</code>:<ul>
+<li>Compute the <a href="#ola_algo">overlap-add algorithm detailed above</a></li>
+<li>Increment <code>i</code> such that <code>i += P_1</code></li>
 </ul>
+</li>
+<li>Decrement <code>i</code> such that <code>i -= FRAME_SIZE</code></li>
+</ul>
+<p>Letting <code>i</code> spill over into the <code>future</code> buffer (which is what happens in the last iteration of the while loop), we maintain a pointer to where the first epoch of the next frame should go. Decrementing by <code>FRAME_SIZE</code> ensures continuity after shifting your <code>past</code> buffer out to the speaker.</p>
+<div class="admonition tip">
+<p class="admonition-title">Note</p>
+<p>Your TA will go over this in more detail at the beginning of your lab section. <a href="http://pre12.deviantart.net/4441/th/pre/f/2011/311/1/b/don__t_panic_wallpaper_by_vantaj-d4fgo87.jpg">Don't panic!</a></p>
+<!--TODO: don't panic, host locally-->
+
+</div>
+<!--## Python
+
+## Grading
+
+Your lab will be graded as follows:
+
+* Prelab (2 points) 
+* Lab (4 points) 
+* Quiz (2 points) -->
               
             </article>
           </div>
